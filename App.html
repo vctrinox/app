@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APP</title>
+
+    <link rel="stylesheet" href="App.css" />
+    <script src="App.js" defer></script>
+  </head>
+
+  <body>
+    
+
+    <div class="grid-container">
+      <div class="item1">Brand</div>
+
+      <div class="item2">
+        <div style="display: inline-block">
+          <div style="font-size: 1.5vw">
+            <span>Cantidad:</span>
+            <form id="myForm" name="myForm" style="display: inline">
+              <input
+                id="NumberId"
+                type="number"
+                name="numerodepedidos"
+                value="0"
+              />
+              <button id="btn" type="submit">Ok</button>
+            </form>
+          </div>
+        </div>
+        <div style="padding: 10px">Presentaciones</div>
+        <div class="wrapperM" id="wrapperM-id">
+          <div id="pres" class="item">One</div>
+          <div id="price1" class="price">Price</div>
+
+          <div id="pres" class="item">two</div>
+          <div class="price">Price</div>
+
+          <div id="pres" class="item">Three</div>
+          <div class="price">Price</div>
+
+          <div id="pres" class="item">Four</div>
+          <div class="price">Price</div>
+
+          <div id="pres" class="item">Five</div>
+          <div class="price">Price</div>
+
+          <div id="pres" class="item">six</div>
+          <div class="price">Price</div>
+        </div>
+      </div>
+
+      <div class="item3">
+        <div style="padding: 10px; display: flex">
+          <div>SubMenu</div>
+         <!-- <div
+            style="
+              display: flex;
+              flex-direction: column;
+              font-size: 50%;
+              margin-left: 20%;
+              align-items: flex-start;
+            "
+          >
+            <div>
+              Nro de pedidos:
+              <div style="display: inline" class="Nro1"></div>
+            </div>
+            <div>
+              Nro de pedidos restantes:
+              <div style="display: inline" class="Nro2"></div>
+            </div>
+          </div>-->
+        </div>
+
+        <div class="wrapper">
+          <div id="Sub">1</div>
+          <div id="Sub">2</div>
+          <div id="Sub">3</div>
+          <div id="Sub">4</div>
+          <div id="Sub">5</div>
+          <div id="Sub">6</div>
+          <div id="Sub">7</div>
+          <div id="Sub">8</div>
+          <div id="Sub">9</div>
+          <div id="Sub">10</div>
+          <div id="Sub">11</div>
+          <div id="Sub">12</div>
+          <div style="visibility: hidden"></div>
+          <button id="confirmar1" class="Confirmar">Confirmar</button>
+          <button id="Eliminar1">Cancelar</button>
+        </div>
+      </div>
+
+      <div class="item4" style="width: 88%">
+        <div style="padding: 10px">Orden</div>
+        <div class="pizarra">
+<!-- 
+         <div class="cardOrder">
+            <div class="subCardOrder" >
+
+              <div style="width: 50%;">
+                <div class="colOrder your-item">
+                  <div><b>Order #</b></div>
+                  <div>Presentación: </div>
+                  <div>pres1</div>
+                  <div>Sabores:</div>
+                  <div>1, 2, 3</div>
+                </div>
+              </div>
+
+              <div style="width: 50%;">
+                <div class="colOrder">
+                  <div><b>Price</b></div>
+                  <div>&#8202;</div>
+                  <div>&#8202;</div>
+                  <div>&#8202;</div>
+                  <div>10$</div>
+                </div>
+              </div>
+
+            </div>
+          </div>-->
+
+          
+
+
+
+
+          <!--<table frame="border" style="width: 90%;">
+            <tr>
+              <th>Order</th>
+              <th>Price</th>
+            </tr>
+
+              <tr>
+                <td>Presentación:</td>
+                
+              </tr>
+              <tr>
+                <td>123456789</td>
+                
+              </tr>
+              <tr>
+                <td>Sabores:</td>
+                
+              </tr>
+              <tr>
+                <td>123456789</td>
+                <td>10$</td>
+              </tr>
+            
+          </table>-->
+          
+            <!--
+            <div style="width: 50%;" id="olOfOrden">
+              <ol></ol>
+            </div>
+            <div style="width: 50%; text-align: end; margin-right: 20%;" id="olOfOrdenPrice">
+              <ol></ol>
+            </div>-->
+        </div>
+        <div class="totalPrice">
+          <div>Total:</div>
+          <div class="totalP" style="padding-left: 10px;"></div>
+        </div>
+        
+
+        <div class="btns">
+          <button id="confirmar2" class="Confirmar">Confirmar</button>
+          <button id="Eliminar2">Cancelar</button>
+        </div>
+      </div>
+
+      <div class="item5">
+        <button onclick="download_csv_file()">Generar</button>
+      </div>
+    </div>
+    <div id="context-menu">
+      <div class="ctx" id="myBtn">Change price</div>
+      <div class="ctx" id="myBtn1">Change Name</div>
+    </div>
+
+    <div id="context-menu3">
+      <div class="ctx" id="myBtn3">Change Name</div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal" style="background-color: #3a3838d4;">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h4 id="titleModal"></h4>
+        </div>
+        <div class="modal-body">
+          <form id="myForm" name="myForm" style="display: inline">
+            <input
+              id="NumberId2"
+            />
+            <button style="display: inline" id="btn2" type="submit">Ok</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <h3></h3>
+        </div>
+      </div>
+    </div>
+
+    
+  </body>
+</html>

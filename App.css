@@ -1,0 +1,335 @@
+body {
+  margin: 0 !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.item1 {
+  grid-area: header;
+}
+.item2 {
+  grid-area: menu;
+}
+.item3 {
+  grid-area: main;
+}
+.item4 {
+  grid-area: right;
+}
+.item5 {
+  grid-area: footer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header header header header"
+    "menu main main main right right"
+    "menu footer footer footer footer footer";
+  gap: 10px;
+  background-color: #2196f3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 20px;
+  font-size: 30px;
+  border-radius: 8px;
+}
+
+.wrapperM {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px 0;
+  border-color: black;
+  grid-auto-rows: 80px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  border-color: black;
+  grid-auto-rows: 100px;
+}
+
+.wrapper > div,
+.wrapperM > div {
+  border: 2px solid;
+  border-radius: 8px;
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+
+.Confirmar {
+  background-color: #22b322;
+  color: whitesmoke;
+  height: 4vw;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.Confirmar:hover {
+  background-color: #24a724;
+}
+
+#Eliminar2,
+#Eliminar1 {
+  background-color: rgba(255, 0, 0, 0.781);
+  color: whitesmoke;
+  height: 4vw;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+#Eliminar1:hover, #Eliminar2:hover {
+  background-color: #e30000bd;
+}
+
+.pizarra {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.5vw;
+  height: 30vw;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px dashed #555 !important;
+  border: 1px solid #555;
+  
+  box-shadow: 0px 0px 10px grey;
+  background-color: whitesmoke;
+  padding-top: 1vw;
+  overflow: auto;
+  width: 100%;
+}
+.pizarra > p {
+  padding: 0 6px;
+}
+
+.totalPrice {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 1.5vw;
+  height: 2vw;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 15px grey;
+  background-color: whitesmoke;
+  padding-top: 0.5vw;
+  width: 100%;
+  border-bottom: 1px solid #555;
+  border-left: 1px solid #555;
+  border-right: 1px solid #555;
+  justify-content: center;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+}
+
+.btns > button {
+  margin: 6px;
+}
+
+.item {
+  border-radius: 8px 0 0 8px !important;
+  border-right: 0 !important;
+}
+.price {
+  border-radius: 0 8px 8px 0 !important;
+  border-left: 0 !important;
+}
+
+.item::after {
+  content: "";
+  height: 4vw; /*You can change this if you want smaller/bigger borders*/
+  width: 1px;
+  position: absolute;
+  background-color: rgb(85 85 85 / 23%); /* The color of your border*/
+  margin-left: 14%;
+}
+
+#context-menu, #context-menu3 {
+  position: fixed;
+  z-index: 10000;
+  width: 10vw;
+  background: black;
+  border-radius: 8px;
+  padding: 0;
+  display: none;
+}
+
+#context-menu .ctx, #context-menu3 .ctx {
+  padding: 8px 10px;
+  font-size: 15px;
+  color: #eee;
+  cursor: pointer;
+}
+#context-menu .ctx:hover, #context-menu3 .ctx:hover {
+  background-color: #343434;
+  border-radius: 8px;
+}
+
+#context-menu.visible, #context-menu3.visible  {
+  display: block;
+}
+
+/*****************************************************************************************/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+
+  /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  margin-left: 35.2%;
+  margin-bottom: 33.63%;
+  width: 20%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*****************************/
+#NumberId2 {
+  width: 30%;
+  height: 2vw;
+}
+
+#btn2 {
+  background-color: #22b322;
+  color: whitesmoke;
+  height: 2vw;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 0.5px solid black;
+}
+
+#btn2:hover {
+  background-color: #449144;
+}
+
+.cardOrder {
+  text-align: initial;
+  margin: 5px auto 5px auto; 
+  background-color: rgb(195 191 191 / 29%); width: 90%; height: auto; 
+  border-radius: 8px;
+}
+
+.subCardOrder {
+  display: flex; 
+  flex-direction: row;
+}
+
+.colOrder {
+  padding: 10px 0 10px 10px; 
+  display: flex; 
+  flex-direction: column;
+}
+
+.your-item > div {
+  border-right: 1px solid rgba(85, 85, 85, 0.082); 
+  
+}
